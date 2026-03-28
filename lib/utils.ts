@@ -20,6 +20,15 @@ export function formatSalary(amount: number): string {
   return `$${amount}`;
 }
 
+export function formatDate(dateStr: string | Date): string {
+  if (!dateStr) return "—";
+  return new Date(dateStr).toLocaleDateString("en-US", {
+    year:  "numeric",
+    month: "short",
+    day:   "numeric",
+  });
+}
+
 export function timeAgo(date: string | Date): string {
   const seconds = Math.floor((Date.now() - new Date(date).getTime()) / 1000);
   const intervals = [

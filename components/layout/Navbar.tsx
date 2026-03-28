@@ -12,16 +12,18 @@ import { useAuth }      from "@/contexts/AuthContext";
 import { getInitials }  from "@/lib/utils";
 
 // Nav links 
-const PUBLIC_LINKS  = [
-  { label: "Home",      href: "/"       },
-  { label: "Jobs",      href: "/jobs"   },
-  { label: "About",     href: "/about"  },
-  { label: "Contact",   href: "/contact"},
+const PUBLIC_LINKS = [
+  { label: "Home",      href: "/"         },
+  { label: "Jobs",      href: "/jobs"     },
+  { label: "AI Tools",  href: "/ai-tools" },
+  { label: "About",     href: "/about"    },
+  { label: "Contact",   href: "/contact"  },
 ];
 
 const AUTH_LINKS = [
   { label: "Home",      href: "/"         },
   { label: "Jobs",      href: "/jobs"     },
+  { label: "AI Tools",  href: "/ai-tools" },
   { label: "About",     href: "/about"    },
   { label: "Contact",   href: "/contact"  },
   { label: "Dashboard", href: "/dashboard"},
