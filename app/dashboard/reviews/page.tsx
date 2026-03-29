@@ -6,6 +6,7 @@ import { reviewService }   from "@/services/review.service";
 import { useAuth }         from "@/contexts/AuthContext";
 import { timeAgo }         from "@/lib/utils";
 import { getErrorMessage } from "@/lib/axios";
+import { applicationService } from "@/services/application.service";
 import type { Review }     from "@/types";
 
 function StarDisplay({ value }: { value: number }) {
@@ -28,16 +29,43 @@ export default function MyReviews() {
   const [deletingId, setDeletingId] = useState<string | null>(null);
 
   useEffect(() => {
-    // Fetch reviews — we filter client-side by userId
-    const fetchAll = async () => {
-      try {
-        // For users, we can get their reviews by checking userId match
-        // Since there's no dedicated endpoint, we load from a visible job and filter
-        setLoading(false);
-      } catch {} finally { setLoading(false); }
-    };
-    fetchAll();
-  }, []);
+  if (!user) return;
+
+  const fetchMyReviews = async () => {
+    setLoading(true);
+    try {
+      // ১. user-এর applications থেকে jobId গুলো নাও
+      const appsRes = await applicationService.getMine({ limit: 50 });
+      const jobIds  = appsRes.data
+        .map((a) => typeof a.jobId === "object" ? a.jobId.id : a.jobId)
+        .filter(Boolean) as string[];
+
+      if (jobIds.length === 0) { setLoading(false); return; }
+
+      // ২. প্রতিটা job-এর reviews fetch করো, user-এর reviews filter করো
+      const allReviews: Review[] = [];
+      await Promise.all(
+        jobIds.map(async (jobId) => {
+          try {
+            const res = await reviewService.getByJob(jobId, { limit: 50 });
+            const mine = res.data.filter((r) => {
+              const reviewUserId = typeof r.userId === "object" ? r.userId.id : r.userId;
+              return reviewUserId === user.id;
+            });
+            allReviews.push(...mine);
+          } catch {}
+        })
+      );
+
+      setReviews(allReviews);
+    } catch {
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  fetchMyReviews();
+}, [user]);
 
   const handleEdit = (review: Review) => {
     setEditId(review.id);
