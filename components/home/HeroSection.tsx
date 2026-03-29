@@ -63,19 +63,21 @@ export function HeroSection() {
         </p>
 
         {/* Search bar */}
-        <div className="mt-10 max-w-2xl mx-auto">
-          <div className="flex items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 shadow-lg shadow-gray-100 dark:shadow-none">
-            <Search className="w-5 h-5 text-gray-400 ml-3 flex-shrink-0" />
-            <input
-              type="text"
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search jobs by title, skill, or company..."
-              className="flex-1 bg-transparent text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none px-2 py-1.5"
-            />
+        <div className="mt-10 max-w-2xl mx-auto px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 rounded-2xl p-2 shadow-lg shadow-gray-100 dark:shadow-none">
+            <div className="flex items-center flex-1 gap-2 px-2">
+              <Search className="w-5 h-5 text-gray-400 flex-shrink-0" />
+              <input
+                type="text"
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                placeholder="Search jobs by title, skill, or company..."
+                className="flex-1 bg-transparent text-sm text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none py-2"
+              />
+            </div>
             <Link
               href={`/jobs${search ? `?search=${encodeURIComponent(search)}` : ""}`}
-              className="flex items-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-colors flex-shrink-0"
+              className="flex items-center justify-center gap-2 px-5 py-2.5 bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-medium rounded-xl transition-colors flex-shrink-0"
             >
               Search
               <ArrowRight className="w-4 h-4" />
