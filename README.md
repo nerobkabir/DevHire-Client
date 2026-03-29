@@ -2,9 +2,8 @@
 
 > A full-stack developer hiring platform that connects talented developers with top companies. Built with modern technologies and powered by Google Gemini AI.
 
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-DevHire-6366f1?style=for-the-badge)](https://devhire-frontend.vercel.app)
+[![Live Demo](https://img.shields.io/badge/Live%20Demo-DevHire-6366f1?style=for-the-badge)](https://devhire-client-app.vercel.app)
 [![API](https://img.shields.io/badge/API-Render-10b981?style=for-the-badge)](https://devhire-server.onrender.com/api/v1/health)
-[![License](https://img.shields.io/badge/License-MIT-f59e0b?style=for-the-badge)](LICENSE)
 
 ---
 
