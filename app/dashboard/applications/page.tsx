@@ -12,7 +12,7 @@ import { timeAgo, formatDate }           from "@/lib/utils";
 import { Pagination }                    from "@/components/jobs/Pagination";
 import type { Job, Application, AppStatus } from "@/types";
 
-// ── Status styles ─────────────────────────────────────────────────────────────
+// ── Status styles
 const STATUS_STYLES: Record<string, string> = {
   PENDING:     "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
   REVIEWED:    "bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300",
@@ -23,7 +23,7 @@ const STATUS_STYLES: Record<string, string> = {
 
 const STATUS_OPTIONS: AppStatus[] = ["PENDING","REVIEWED","SHORTLISTED","REJECTED","HIRED"];
 
-// ── USER Applications view ────────────────────────────────────────────────────
+// ── USER Applications view 
 function UserApplications() {
   const [apps, setApps]               = useState<Application[]>([]);
   const [loading, setLoading]         = useState(true);
@@ -219,7 +219,7 @@ function UserApplications() {
   );
 }
 
-// ── RECRUITER Applications view ───────────────────────────────────────────────
+// ── RECRUITER Applications view 
 function RecruiterApplications() {
   const { user }      = useAuth();
   const searchParams  = useSearchParams();
@@ -421,7 +421,7 @@ function RecruiterApplications() {
   );
 }
 
-// ── Role router ───────────────────────────────────────────────────────────────
+// ── Role router 
 function ApplicationsContent() {
   const { user } = useAuth();
 
@@ -440,7 +440,7 @@ function ApplicationsContent() {
   return <UserApplications />;
 }
 
-// ── Default export with Suspense (required for useSearchParams) ───────────────
+// ── Default export with Suspense (required for useSearchParams) 
 export default function ApplicationsPage() {
   return (
     <Suspense fallback={

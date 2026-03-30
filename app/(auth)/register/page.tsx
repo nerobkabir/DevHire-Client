@@ -7,7 +7,7 @@ import { Eye, EyeOff, Loader2, Check } from "lucide-react";
 import { useAuth }                     from "@/contexts/AuthContext";
 import { getErrorMessage }             from "@/lib/axios";
 
-// ── Form state ────────────────────────────────────────────────────────────────
+// Form state 
 interface FormState {
   name:     string;
   email:    string;
@@ -22,7 +22,7 @@ interface FormErrors {
   general?:  string;
 }
 
-// ── Validation ────────────────────────────────────────────────────────────────
+// Validation
 function validate(form: FormState): FormErrors {
   const errors: FormErrors = {};
   if (!form.name.trim())                             errors.name     = "Name is required";
@@ -35,7 +35,7 @@ function validate(form: FormState): FormErrors {
   return errors;
 }
 
-// ── Password strength ─────────────────────────────────────────────────────────
+// Password strength
 function getPasswordStrength(password: string): { score: number; label: string; color: string } {
   if (!password) return { score: 0, label: "", color: "" };
   let score = 0;
@@ -50,7 +50,7 @@ function getPasswordStrength(password: string): { score: number; label: string; 
   return              { score, label: "Strong", color: "bg-emerald-500" };
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// Component
 export default function RegisterPage() {
   const router               = useRouter();
   const { register, isAuthenticated } = useAuth();

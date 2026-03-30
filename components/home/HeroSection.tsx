@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Link                    from "next/link";
 import { Search, ArrowRight, Sparkles, TrendingUp, Users, Briefcase } from "lucide-react";
 
-// ── Animated counter ──────────────────────────────────────────────────────────
+// ── Animated counter 
 function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   const [count, setCount] = useState(0);
 
@@ -23,7 +23,7 @@ function Counter({ end, suffix = "" }: { end: number; suffix?: string }) {
   return <span>{count.toLocaleString()}{suffix}</span>;
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// ── Component 
 export function HeroSection() {
   const [search, setSearch] = useState("");
 

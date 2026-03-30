@@ -16,7 +16,7 @@ import { ReviewSection }      from "@/components/jobs/ReviewSection";
 import { JobCard, JobCardSkeleton } from "@/components/jobs/JobCard";
 import type { Job }           from "@/types";
 
-// ── Skeleton ──────────────────────────────────────────────────────────────────
+// Skeleton 
 function PageSkeleton() {
   return (
     <div className="animate-pulse max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
@@ -54,7 +54,7 @@ function PageSkeleton() {
   );
 }
 
-// ── Main page ─────────────────────────────────────────────────────────────────
+// Main page 
 export default function JobDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id }                    = use(params);
   const { user, isAuthenticated } = useAuth();
@@ -150,7 +150,7 @@ export default function JobDetailPage({ params }: { params: Promise<{ id: string
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-            {/* ── Left: Main content ──────────────────────────────────── */}
+            {/* Left: Main content */}
             <div className="lg:col-span-2 space-y-6">
 
               {/* Job header card */}

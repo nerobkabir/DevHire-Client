@@ -10,7 +10,7 @@ import { ActiveFilterTags } from "@/components/jobs/ActiveFilterTags";
 import { Pagination } from "@/components/jobs/Pagination";
 import type { Job } from "@/types";
 
-// ── Default filter state ──────────────────────────────────────────────────────
+// Default filter state 
 const DEFAULT_FILTERS = {
   category: "",
   jobType: "",
@@ -25,7 +25,7 @@ const SORT_OPTIONS = [
   { value: "salary", label: "Salary: Low→High" },
 ];
 
-// ── Empty state ───────────────────────────────────────────────────────────────
+// Empty state 
 function EmptyState({ onReset }: { onReset: () => void }) {
   return (
     <div className="flex flex-col items-center justify-center py-24 text-center">
@@ -49,12 +49,12 @@ function EmptyState({ onReset }: { onReset: () => void }) {
   );
 }
 
-// ── Main content component that uses useSearchParams ────────────────────────
+// Main content component that uses useSearchParams
 function JobsContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
 
-  // ── State ─────────────────────────────────────────────────────────────────
+  // State 
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
   const [totalPages, setTotalPages] = useState(1);
@@ -72,7 +72,7 @@ function JobsContent() {
   const searchInputRef = useRef<HTMLInputElement>(null);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
 
-  // ── Fetch jobs ─────────────────────────────────────────────────────────────
+  // Fetch jobs
   const fetchJobs = useCallback(async () => {
     setLoading(true);
     try {
@@ -113,7 +113,7 @@ function JobsContent() {
     fetchJobs();
   }, [page]);
 
-  // ── Handlers ──────────────────────────────────────────────────────────────
+  // Handlers 
   const handleFilterChange = (key: keyof typeof filters, value: string | number) => {
     setFilters((prev) => ({ ...prev, [key]: value }));
     setPage(1);
@@ -144,7 +144,7 @@ function JobsContent() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-950">
-      {/* ── Page header ─────────────────────────────────────────────────── */}
+      {/* Page header */}
       <div className="bg-white dark:bg-gray-950 border-b border-gray-100 dark:border-gray-800 py-10 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -215,7 +215,7 @@ function JobsContent() {
         </div>
       </div>
 
-      {/* ── Main content ────────────────────────────────────────────────── */}
+      {/* ── Main content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="flex gap-7">
           {/* Desktop sidebar */}
@@ -309,7 +309,7 @@ function JobsContent() {
   );
 }
 
-// ── Page component (server component) with Suspense ────────────────────────
+// ── Page component (server component) with Suspense 
 export default function JobsPage() {
   return (
     <Suspense

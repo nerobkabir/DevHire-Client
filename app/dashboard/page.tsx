@@ -10,7 +10,7 @@ import { useAuth }                 from "@/contexts/AuthContext";
 import { formatSalary, timeAgo }   from "@/lib/utils";
 import type { Job, Application }   from "@/types";
 
-// ── Stat card ─────────────────────────────────────────────────────────────────
+// ── Stat card 
 function StatCard({ label, value, icon: Icon, color, href }: {
   label: string; value: number | string; icon: React.ElementType;
   color: string; href?: string;
@@ -29,7 +29,7 @@ function StatCard({ label, value, icon: Icon, color, href }: {
   return href ? <Link href={href}>{content}</Link> : content;
 }
 
-// ── Status badge ──────────────────────────────────────────────────────────────
+// ── Status badge
 function StatusBadge({ status }: { status: string }) {
   const s: Record<string, string> = {
     PENDING:     "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
@@ -47,7 +47,7 @@ function StatusBadge({ status }: { status: string }) {
   );
 }
 
-// ── ADMIN overview ────────────────────────────────────────────────────────────
+// ── ADMIN overview
 function AdminOverview() {
   const [stats, setStats]     = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -147,7 +147,7 @@ function AdminOverview() {
   );
 }
 
-// ── RECRUITER overview ────────────────────────────────────────────────────────
+// ── RECRUITER overview 
 function RecruiterOverview() {
   const { user }          = useAuth();
   const [jobs, setJobs]   = useState<Job[]>([]);
@@ -219,7 +219,7 @@ function RecruiterOverview() {
   );
 }
 
-// ── USER overview (developer) ─────────────────────────────────────────────────
+// ── USER overview (developer)
 function UserOverview() {
   const [apps, setApps]       = useState<Application[]>([]);
   const [loading, setLoading] = useState(true);
@@ -279,7 +279,7 @@ function UserOverview() {
   );
 }
 
-// ── Role router ───────────────────────────────────────────────────────────────
+// ── Role router 
 export default function DashboardOverview() {
   const { user } = useAuth();
   if (!user) return null;

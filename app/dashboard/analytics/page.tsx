@@ -11,14 +11,14 @@ import {
 import { dashboardService }    from "@/services/dashboard.service";
 import type { ChartData, PieChartData } from "@/types";
 
-// ── Color palettes ────────────────────────────────────────────────────────────
+// ── Color palettes 
 const BAR_COLORS  = ["#6366f1", "#10b981", "#f59e0b"];
 const PIE_COLORS  = [
   "#6366f1","#10b981","#f59e0b","#ef4444","#8b5cf6",
   "#06b6d4","#ec4899","#84cc16","#f97316","#64748b",
 ];
 
-// ── Chart card wrapper ────────────────────────────────────────────────────────
+// ── Chart card wrapper
 function ChartCard({ title, subtitle, children }: {
   title: string; subtitle?: string; children: React.ReactNode;
 }) {
@@ -33,7 +33,7 @@ function ChartCard({ title, subtitle, children }: {
   );
 }
 
-// ── Custom tooltip ────────────────────────────────────────────────────────────
+// ── Custom tooltip 
 function CustomTooltip({ active, payload, label }: any) {
   if (!active || !payload?.length) return null;
   return (
@@ -48,7 +48,7 @@ function CustomTooltip({ active, payload, label }: any) {
   );
 }
 
-// ── Main ──────────────────────────────────────────────────────────────────────
+// Main 
 export default function AnalyticsPage() {
   const [barData,  setBarData]  = useState<ChartData | null>(null);
   const [lineData, setLineData] = useState<ChartData | null>(null);
@@ -73,7 +73,7 @@ export default function AnalyticsPage() {
     );
   }
 
-  // ── Transform bar data for recharts ────────────────────────────────────────
+  //  Transform bar data for recharts 
   const barChartData = barData?.labels.map((label, i) => ({
     month:        label,
     Jobs:         barData.datasets.jobs?.[i]         ?? 0,
@@ -81,14 +81,14 @@ export default function AnalyticsPage() {
     Users:        barData.datasets.users?.[i]        ?? 0,
   })) ?? [];
 
-  // ── Transform line data ────────────────────────────────────────────────────
+  // Transform line data
   const lineChartData = lineData?.labels.map((label, i) => ({
     date:  label,
     Users: lineData.datasets.users?.[i] ?? 0,
     Jobs:  lineData.datasets.jobs?.[i]  ?? 0,
   })) ?? [];
 
-  // ── Pie data ───────────────────────────────────────────────────────────────
+  //  Pie data
   const jobsByCategory    = pieData?.jobsByCategory        ?? [];
   const appsByStatus      = pieData?.applicationsByStatus  ?? [];
   const usersByRole       = pieData?.usersByRole           ?? [];

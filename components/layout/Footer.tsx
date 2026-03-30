@@ -20,7 +20,7 @@ const TwitterXIcon = () => (
   </svg>
 );
 
-// ─── Footer links ──────────────────────────────────────────────────────────────
+// ─── Footer links 
 const FOOTER_LINKS = {
   platform: [
     { label: "Browse Jobs",    href: "/jobs"          },
@@ -54,7 +54,7 @@ const SOCIAL_LINKS = [
   { label: "Twitter",  href: "https://twitter.com",  icon: TwitterXIcon },
 ];
 
-// ─── Footer component ──────────────────────────────────────────────────────────
+// ─── Footer component 
 export function Footer() {
   return (
     <footer className="bg-gray-950 text-gray-400">
@@ -146,7 +146,7 @@ export function Footer() {
   );
 }
 
-// ─── Footer link column ────────────────────────────────────────────────────────
+// ─── Footer link column 
 function FooterLinkColumn({
   title,
   links,

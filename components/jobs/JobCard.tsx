@@ -3,7 +3,7 @@ import { MapPin, DollarSign, Clock }     from "lucide-react";
 import { formatSalary, timeAgo }         from "@/lib/utils";
 import type { Job }                      from "@/types";
 
-// ── Skeleton ──────────────────────────────────────────────────────────────────
+// ── Skeleton 
 export function JobCardSkeleton() {
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-5 animate-pulse h-[260px] flex flex-col">
@@ -26,7 +26,7 @@ export function JobCardSkeleton() {
   );
 }
 
-// ── Job card ──────────────────────────────────────────────────────────────────
+// ── Job card
 export function JobCard({ job }: { job: Job }) {
   const companyName = typeof job.createdBy === "object" ? job.createdBy.name : job.company;
 

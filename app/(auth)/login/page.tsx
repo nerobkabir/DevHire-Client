@@ -7,14 +7,14 @@ import { Eye, EyeOff, Loader2 } from "lucide-react";
 import { useAuth }              from "@/contexts/AuthContext";
 import { getErrorMessage }      from "@/lib/axios";
 
-// ── Demo credentials ──────────────────────────────────────────────────────────
+// Demo credentials
 const DEMO_ACCOUNTS = [
   { label: "User Demo",      email: "user@devhire.com",      password: "user123",      role: "USER"      },
   { label: "Recruiter Demo", email: "recruiter@devhire.com", password: "recruiter123", role: "RECRUITER" },
   { label: "Admin Demo",     email: "admin@devhire.com",     password: "admin123",     role: "ADMIN"     },
 ] as const;
 
-// ── Form state ────────────────────────────────────────────────────────────────
+// Form state 
 interface FormState {
   email:    string;
   password: string;
@@ -26,7 +26,7 @@ interface FormErrors {
   general?:  string;
 }
 
-// ── Validation ────────────────────────────────────────────────────────────────
+// Validation 
 function validate(form: FormState): FormErrors {
   const errors: FormErrors = {};
   if (!form.email.trim())                   errors.email    = "Email is required";
@@ -35,7 +35,7 @@ function validate(form: FormState): FormErrors {
   return errors;
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// Component 
 export default function LoginPage() {
   const router              = useRouter();
   const { login, isAuthenticated } = useAuth();

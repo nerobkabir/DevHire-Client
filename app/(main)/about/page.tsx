@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   description: "Learn about DevHire's mission to connect talented developers with the best companies in the world.",
 };
 
-// ── Data ──────────────────────────────────────────────────────────────────────
+// Data 
 const TEAM = [
   {
     name:   "Sarah Chen",
@@ -72,7 +72,7 @@ export default function AboutPage() {
   return (
     <div className="bg-white dark:bg-gray-950">
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      {/* Hero */}
       <section className="relative overflow-hidden px-4 sm:px-6 lg:px-8 pt-20 pb-24 text-center">
         <div className="absolute inset-0 bg-gradient-to-b from-indigo-50/60 to-transparent dark:from-indigo-950/20 dark:to-transparent pointer-events-none" />
         <div className="relative max-w-3xl mx-auto">
@@ -92,7 +92,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Stats ─────────────────────────────────────────────────────────── */}
+      {/* Stats*/}
       <section className="bg-indigo-600 dark:bg-indigo-700 py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-3 gap-8">
@@ -110,7 +110,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Values ────────────────────────────────────────────────────────── */}
+      {/*  Values */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -136,7 +136,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── Team ──────────────────────────────────────────────────────────── */}
+      {/* Team */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-950">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-14">
@@ -161,7 +161,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* ── CTA ──────────────────────────────────────────────────────────── */}
+      {/* ── CTA*/}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">

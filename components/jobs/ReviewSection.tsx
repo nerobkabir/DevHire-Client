@@ -9,7 +9,7 @@ import { timeAgo }        from "@/lib/utils";
 import { getErrorMessage } from "@/lib/axios";
 import type { Review }    from "@/types";
 
-// ── Star rating ───────────────────────────────────────────────────────────────
+// ── Star rating 
 function StarRating({ value, onChange, readonly = false }: {
   value: number; onChange?: (v: number) => void; readonly?: boolean;
 }) {
@@ -37,7 +37,7 @@ function StarRating({ value, onChange, readonly = false }: {
   );
 }
 
-// ── AI Summary card ───────────────────────────────────────────────────────────
+// ── AI Summary card
 function AISummaryCard({ jobId }: { jobId: string }) {
   const [loading, setLoading] = useState(false);
   const [summary, setSummary] = useState<{
@@ -105,7 +105,7 @@ function AISummaryCard({ jobId }: { jobId: string }) {
   );
 }
 
-// ── Review section ────────────────────────────────────────────────────────────
+// ── Review section 
 export function ReviewSection({ jobId }: { jobId: string }) {
   const { user, isAuthenticated } = useAuth();
   const [reviews, setReviews]     = useState<Review[]>([]);

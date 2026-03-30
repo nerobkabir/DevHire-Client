@@ -14,7 +14,7 @@ interface AnalysisResult {
   overallScore:   number;
 }
 
-// ── Circular score ────────────────────────────────────────────────────────────
+// ── Circular score
 function CircularScore({ score }: { score: number }) {
   const radius      = 42;
   const circ        = 2 * Math.PI * radius;
@@ -49,7 +49,7 @@ function CircularScore({ score }: { score: number }) {
   );
 }
 
-// ── List section ──────────────────────────────────────────────────────────────
+// ── List section 
 function ResultSection({ icon: Icon, title, items, color }: {
   icon: React.ElementType; title: string; items: string[]; color: string;
 }) {

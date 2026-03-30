@@ -12,7 +12,7 @@ import {
 import { useAuth }      from "@/contexts/AuthContext";
 import { getInitials }  from "@/lib/utils";
 
-// ── Nav items per role ────────────────────────────────────────────────────────
+// ── Nav items per role
 const USER_NAV = [
   { label: "Overview",     href: "/dashboard",              icon: LayoutDashboard },
   { label: "Applications", href: "/dashboard/applications", icon: FileText        },
@@ -36,7 +36,7 @@ const ADMIN_NAV = [
   { label: "Profile",      href: "/dashboard/profile",          icon: Settings        },
 ];
 
-// ── Theme toggle ──────────────────────────────────────────────────────────────
+// ── Theme toggle 
 function ThemeToggle() {
   const { resolvedTheme, setTheme } = useTheme();
   return (
@@ -49,7 +49,7 @@ function ThemeToggle() {
   );
 }
 
-// ── Sidebar ───────────────────────────────────────────────────────────────────
+// ── Sidebar 
 function Sidebar({
   navItems, open, onClose,
 }: {
@@ -148,7 +148,7 @@ function Sidebar({
   );
 }
 
-// ── Dashboard Navbar ──────────────────────────────────────────────────────────
+// ── Dashboard Navbar
 function DashboardNavbar({ onMenuClick }: { onMenuClick: () => void }) {
   const { user, logout }  = useAuth();
   const pathname          = usePathname();
@@ -221,7 +221,7 @@ function DashboardNavbar({ onMenuClick }: { onMenuClick: () => void }) {
   );
 }
 
-// ── Main export ───────────────────────────────────────────────────────────────
+// ── Main export
 export function DashboardLayout({ children }: { children: React.ReactNode }) {
   const { user } = useAuth();
   const [sidebarOpen, setSidebarOpen] = useState(false);

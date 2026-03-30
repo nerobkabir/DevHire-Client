@@ -49,7 +49,7 @@ export default function PostJobPage() {
   const set = (key: keyof FormState, value: string) =>
     setForm((p) => ({ ...p, [key]: value }));
 
-  // ── AI generate description ───────────────────────────────────────────────
+  // ── AI generate description 
   const handleAiGenerate = async () => {
     if (!form.title || !form.company) {
       setErrors({
@@ -72,7 +72,7 @@ export default function PostJobPage() {
     } finally { setAiLoading(false); }
   };
 
-  // ── Add / remove skill ────────────────────────────────────────────────────
+  // ── Add / remove skill
   const addSkill = () => {
     const s = form.skillInput.trim();
     if (s && !form.skills.includes(s)) {
@@ -85,7 +85,7 @@ export default function PostJobPage() {
   const removeSkill = (skill: string) =>
     setForm((p) => ({ ...p, skills: p.skills.filter((s) => s !== skill) }));
 
-  // ── Validation ────────────────────────────────────────────────────────────
+  // ── Validation
   const validate = (): boolean => {
     const e: FormErrors = {};
     if (!form.title.trim())       e.title       = "Title is required";
@@ -99,7 +99,7 @@ export default function PostJobPage() {
     return Object.keys(e).length === 0;
   };
 
-  // ── Submit ────────────────────────────────────────────────────────────────
+  // ── Submit
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;

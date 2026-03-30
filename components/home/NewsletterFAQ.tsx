@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown, Mail } from "lucide-react";
 
-// ── FAQ data ──────────────────────────────────────────────────────────────────
+// ── FAQ data 
 const FAQ_ITEMS = [
   {
     q: "Is DevHire free for developers?",
@@ -31,7 +31,7 @@ const FAQ_ITEMS = [
   },
 ];
 
-// ── FAQ item ──────────────────────────────────────────────────────────────────
+// ── FAQ item 
 function FAQItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false);
 
@@ -53,7 +53,7 @@ function FAQItem({ q, a }: { q: string; a: string }) {
   );
 }
 
-// ── Newsletter ────────────────────────────────────────────────────────────────
+// ── Newsletter
 function Newsletter() {
   const [email, setEmail]       = useState("");
   const [submitted, setSubmitted] = useState(false);
@@ -101,7 +101,7 @@ function Newsletter() {
   );
 }
 
-// ── Combined component ────────────────────────────────────────────────────────
+// ── Combined component
 export function NewsletterFAQ() {
   return (
     <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900/50">

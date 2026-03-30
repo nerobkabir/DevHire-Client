@@ -7,7 +7,7 @@ import { jobService }   from "@/services/job.service";
 import { timeAgo, formatSalary } from "@/lib/utils";
 import type { Job }     from "@/types";
 
-// ── Skeleton card ─────────────────────────────────────────────────────────────
+// ── Skeleton card 
 function SkeletonCard() {
   return (
     <div className="bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-6 h-[220px] animate-pulse">
@@ -25,7 +25,7 @@ function SkeletonCard() {
   );
 }
 
-// ── Job card ──────────────────────────────────────────────────────────────────
+// ── Job card
 function JobCard({ job }: { job: Job }) {
   const company = typeof job.createdBy === "object" ? job.createdBy.name : job.company;
 
@@ -73,7 +73,7 @@ function JobCard({ job }: { job: Job }) {
   );
 }
 
-// ── Component ─────────────────────────────────────────────────────────────────
+// ── Component 
 export function FeaturedJobs() {
   const [jobs, setJobs]     = useState<Job[]>([]);
   const [loading, setLoading] = useState(true);
