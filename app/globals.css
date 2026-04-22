@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@variant dark (&:where([class~="dark"], [class~="dark"] *));
+
 @theme {
   --color-primary-50: #eef2ff;
   --color-primary-100: #e0e7ff;
@@ -18,10 +20,9 @@
     color: #111827;
     font-family: var(--font-sans);
   }
-}
 
-/* @layer এর বাইরে রাখো */
-html.dark body {
-  background-color: #030712;
-  color: #f9fafb;
+  .dark body {
+    background-color: #030712;
+    color: #f9fafb;
+  }
 }
