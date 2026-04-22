@@ -18,9 +18,10 @@
     color: #111827;
     font-family: var(--font-sans);
   }
+}
 
-  .dark body {
-    background-color: #030712;
-    color: #f9fafb;
-  }
+/* @layer এর বাইরে রাখো */
+html.dark body {
+  background-color: #030712;
+  color: #f9fafb;
 }

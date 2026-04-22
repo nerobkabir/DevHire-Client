@@ -4,9 +4,8 @@ import { Footer } from "@/components/layout/Footer";
 
 export default function MainLayout({ children }: { children: ReactNode }) {
   return (
-    <div className="min-h-screen flex flex-col bg-white dark:bg-gray-950">
+    <div className="min-h-screen flex flex-col">  {/* bg-white সরাও */}
       <Navbar />
-      {/* pt-16 = navbar height */}
       <main className="flex-1 pt-16">
         {children}
       </main>
